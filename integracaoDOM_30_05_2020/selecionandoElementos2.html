@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>   
+        document.querySelector('#primeiro').classList.add('destaque')
+        //CRIANDO UMA FUNÇÃO PARA ADICIONAR UMA CLASSE EM UMA TAG
+        const selecionar = seletor => document.querySelectorAll(seletor).forEach(elemento => elemento.classList.add('destaque'))
+        //CRIANDO UMA FUNÇÃO PARA REMOVER A CLASSE EM UMA TAG
+        const descelecionar = seletor => document.querySelectorAll(seletor).forEach(elemento => elemento.classList.remove('destaque'))
+
+        
+
+
+
+
+        descelecionar('#primeiro')
+        selecionar('div')
+        descelecionar('*')
+        selecionar('.terceiro.ultimo')
+        descelecionar('*')
+        selecionar(':not(#primeiro)')
+        descelecionar('*')
+        selecionar(':nth-child(1)')
+        descelecionar('*')
+        selecionar('div:nth-of-type(1)')
+        descelecionar('*')
+        selecionar('[wb-attrib]')
+
+    </script>
+</body>
+</html>

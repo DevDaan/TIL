@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        document.getElementById('primeiro').classList.add('destaque')
+
+
+        const divs = document.getElementsByTagName('div')
+
+        // PRIMEIRA FORMA DE TRANSFOMRAR HTML COLLECTION EM ARRAY
+        Array.from(divs).forEach(element => element.classList.remove('destaque'))
+
+        // OUTRA FORMA DE TRANSFORMAR UM HTML COLLECTION EM ARRAY UTILIZANDO O SPREAD OPERATOR
+        const divsArray = [...divs]
+        divsArray.forEach(element => element.classList.add('destaque'))
+
+
+        const ultimosElementos = document.getElementsByClassName('ultimo')
+        for(let elemento of ultimosElementos){
+            elemento.classList.remove('destaque')
+        }
+
+    </script>
+</body>
+</html>
